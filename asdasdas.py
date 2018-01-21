@@ -1,0 +1,27 @@
+import time
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get("http://172.31.4.74/index.php?m=user&c=public&a=login")
+driver.find_element_by_id("username").send_keys("username11")
+driver.find_element_by_id("password").send_keys("username")
+driver.find_element_by_xpath("/html/body/div[3]/div[2]/form/ul/li[5]/input").click()
+time.sleep(5)
+#driver.find_element_by_link_text("进入商城购物").click()
+driver.find_element_by_link_text("账号设置").click()
+driver.find_element_by_link_text("个人资料").click()
+driver.find_element_by_name("true_name").clear()
+driver.find_element_by_name("true_name").send_keys("完善更息")
+driver.find_element_by_xpath("//input[@value='1']").click()
+driver.find_element_by_class_name("btn4").submit()
+driver.execute_script("document.getElementById(\"date\").removeAttribute(\"readonly\")")
+driver.find_element_by_id("date").clear()
+driver.find_element_by_id("date").send_keys("1999-9-9")
+driver.find_element_by_id("qq").clear()
+driver.find_element_by_id("qq").send_keys("5459784321")
+driver.find_element_by_class_name("btn4").submit()
+time.sleep(5)
+driver.switch_to.alert.accept()
+driver.quit()
+#driver.quit()
+
+
